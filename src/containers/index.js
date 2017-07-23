@@ -10,7 +10,7 @@ import ContentStore from '../mobx/CounterStore';
 // add router key to fix this issue
 // https://github.com/reactjs/react-router-redux/issues/179#issuecomment-275576250
 const Main = () => (
-  <Provider ContentStore={ContentStore}>
+  <Provider ContentStore={new ContentStore()}>
     <Router key={Math.random()} history={hashHistory}>
       <Route path="/" component={Home} />
       <Route path="*" component={NotFound} />

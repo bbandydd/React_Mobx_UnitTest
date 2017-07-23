@@ -14,13 +14,15 @@ class ContentStore {
     this.count -= 1;
   }
 
-  getList = async () => {
+  getList2 = async () => {
     const data = await getData('https://demojson.herokuapp.com/cart');
 
     runInAction('get api', () => {
       this.list = data;
     });
   }
+
+  getList = async () => await getData('https://demojson.herokuapp.com/cart')
 }
 
-export default new ContentStore();
+export default ContentStore;
